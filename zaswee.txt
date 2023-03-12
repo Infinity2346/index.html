@@ -1,0 +1,248 @@
+--local--
+local ScreenGui = Instance.new("ScreenGui")
+local V1 = Instance.new('Frame', main)
+local S = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Open = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UICorner2 = Instance.new("UICorner")
+local UICorner3 = Instance.new("UICorner")
+local UICorner4 = Instance.new("UICorner")
+local UICorner5 = Instance.new("UICorner")
+local UICorner6 = Instance.new("UICorner")
+local UICorner7 = Instance.new("UICorner")
+local UICorner8 = Instance.new("UICorner")
+local UICorner9 = Instance.new("UICorner")
+local UICorner10 = Instance.new("UICorner")
+local UICorner11 = Instance.new("UICorner")
+local UICorner12 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local setws = Instance.new("TextButton")
+local wsinput = Instance.new("TextBox")
+local rews = Instance.new("TextButton")
+local bright = Instance.new("TextButton")
+local Esp = Instance.new("TextButton")
+local TpItem = Instance.new("TextButton")
+local AutoWin = Instance.new("TextButton")
+local Remove = Instance.new("TextButton")
+
+--Gui--
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+S.Name = "S"
+S.Parent = game.CoreGui
+S.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+--Menu:
+main.Parent = ScreenGui
+main.AnchorPoint = Vector2.new(1, 0)
+main.Active = true
+main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+main.Position = UDim2.new(0.65, 0, 0.13, 0)
+main.Size = UDim2.new(0, 260, 0, 170)
+main.Draggable = true
+
+V1.Parent = S
+V1.AnchorPoint = Vector2.new(0.9, 0)
+V1.Active = true
+V1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+V1.BackgroundTransparency = 1.000
+V1.Position = UDim2.new(0.997, 0, 0.13, 0)
+V1.Size = UDim2.new(0, 18, 0, 18)
+
+UICorner.Parent = main
+UICorner2.Parent = Open
+UICorner3.Parent = V1
+UICorner4.Parent = Close
+UICorner5.Parent = setws
+UICorner6.Parent = wsinput
+UICorner7.Parent = rews
+UICorner8.Parent = bright
+UICorner9.Parent = Esp
+UICorner10.Parent = TpItem
+UICorner11.Parent = AutoWin
+UICorner12.Parent = Remove
+
+Open.Name = "Open"
+Open.Parent = V1
+Open.AnchorPoint = Vector2.new(0.9, 0)
+Open.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Open.Position = UDim2.new(0.898, 0, 0.0325, 0)
+Open.Size = UDim2.new(0, 20, 0, 20)
+Open.Font = Enum.Font.SourceSans
+Open.Text = "+"
+Open.TextColor3 = Color3.fromRGB(0, 153, 0)
+Open.TextSize = 39.000
+Open.Visible = false
+Open.MouseButton1Down:Connect(function()
+main.Visible = true
+Open.Visible = false
+Close.Visible = true
+end)
+
+Close.Name = "Close"
+Close.Parent = V1
+Close.AnchorPoint = Vector2.new(0.9, 0)
+Close.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Close.Position = UDim2.new(0.898, 0, 0.0325, 0)
+Close.Size = UDim2.new(0, 20, 0, 20)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "-"
+Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextSize = 39.000
+Close.MouseButton1Down:Connect(function()
+main.Visible = false
+Close.Visible = false
+Open.Visible = true
+end)
+
+Title.Name = "Title"
+Title.Parent = main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.41, 0, 0.02, 0)
+Title.Size = UDim2.new(0.2, 0, 0.2, 0)
+Title.Font = Enum.Font.Cartoon
+Title.Text = "Rainbow Friends"
+Title.TextColor3 = Color3.fromRGB(255, 20, 147)
+Title.TextSize = 23.000
+
+local function JLJNO_fake_script() -- Title.RainbowTextColor 
+	local script = Instance.new('LocalScript', Title)
+
+	local t = 30;
+	
+	while wait() do
+	  local hue = tick() % t / t
+	  local color = Color3.fromHSV(hue,1,1) 
+	  script.Parent.TextColor3 = color
+	end
+end
+coroutine.wrap(JLJNO_fake_script)()
+
+setws.Name = "setws"
+setws.Parent = main
+setws.AnchorPoint = Vector2.new(0.9, 0)
+setws.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+setws.Position = UDim2.new(0.19, 0, 0.19, 0)
+setws.Size = UDim2.new(0, 50, 0, 25)
+setws.Font = Enum.Font.SourceSans
+setws.Text = "Set Speed"
+setws.TextColor3 = Color3.fromRGB(255, 255, 255)
+setws.TextSize = 12.000
+setws.MouseButton1Click:Connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = wsinput.Text
+end)
+
+wsinput.Name = "wsinput"
+wsinput.Parent = main
+wsinput.AnchorPoint = Vector2.new(0.9, 0)
+wsinput.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+wsinput.Position = UDim2.new(0.625, 0, 0.19, 0)
+wsinput.Size = UDim2.new(0, 80, 0, 25)
+wsinput.Font = Enum.Font.SourceSans
+wsinput.Text = "Speed 16"
+wsinput.TextColor3 = Color3.fromRGB(255, 255, 255)
+wsinput.TextSize = 12.000
+
+rews.Name = "rews"
+rews.Parent = main
+rews.AnchorPoint = Vector2.new(0.9, 0)
+rews.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+rews.Position = UDim2.new(0.964, 0, 0.19, 0)
+rews.Size = UDim2.new(0, 50, 0, 25)
+rews.Font = Enum.Font.SourceSans
+rews.Text = "Reset Speed"
+rews.TextColor3 = Color3.fromRGB(255, 255, 255)
+rews.TextSize = 12.000
+rews.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+bright.Name = "bright"
+bright.Parent = main
+bright.AnchorPoint = Vector2.new(0.9, 0)
+bright.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+bright.Position = UDim2.new(0.19, 0, 0.38, 0)
+bright.Size = UDim2.new(0, 50, 0, 25)
+bright.Font = Enum.Font.SourceSans
+bright.Text = "Fullbright"
+bright.TextColor3 = Color3.fromRGB(255, 255, 255)
+bright.TextScaled = true
+bright.TextSize = 14.000
+bright.TextWrapped = true
+bright.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Fullbright.txt'))()
+end)
+
+Esp.Name = "Esp"
+Esp.Parent = main
+Esp.AnchorPoint = Vector2.new(0.9, 0)
+Esp.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Esp.Position = UDim2.new(0.4, 0, 0.38, 0)
+Esp.Size = UDim2.new(0, 50, 0, 25)
+Esp.Font = Enum.Font.SourceSans
+Esp.Text = "Esp"
+Esp.TextColor3 = Color3.fromRGB(255, 255, 255)
+Esp.TextSize = 14.000
+Esp.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Rainbow%20Friends%20Esp.txt'))()
+end)
+
+TpItem.Name = "TpItem"
+TpItem.Parent = main
+TpItem.AnchorPoint = Vector2.new(0.9, 0)
+TpItem.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TpItem.Position = UDim2.new(0.613, 0, 0.38, 0)
+TpItem.Size = UDim2.new(0, 50, 0, 25)
+TpItem.Font = Enum.Font.SourceSans
+TpItem.Text = "Tp item"
+TpItem.TextColor3 = Color3.fromRGB(255, 255, 255)
+TpItem.TextSize = 14.000
+TpItem.MouseButton1Down:Connect(function()
+for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
+			if v.ClassName == "Model" then
+				if v:FindFirstChild("TouchTrigger") then
+					firetouchinterest(v.TouchTrigger, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+					task.wait()
+					firetouchinterest(v.TouchTrigger, game.Players.LocalPlayer.Character.HumanoidRootPart, 1)
+				end
+			end
+		end
+end)
+
+AutoWin.Name = "AutoWin"
+AutoWin.Parent = main
+AutoWin.AnchorPoint = Vector2.new(0.9, 0)
+AutoWin.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+AutoWin.Position = UDim2.new(0.823, 0, 0.38, 0)
+AutoWin.Size = UDim2.new(0, 50, 0, 25)
+AutoWin.Font = Enum.Font.SourceSans
+AutoWin.Text = "Auto Win"
+AutoWin.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoWin.TextSize = 14.000
+AutoWin.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Auto%20Win.txt'))()
+end)
+
+Remove.Name = "Remove"
+Remove.Parent =  main
+Remove.AnchorPoint = Vector2.new(0.9, 0)
+Remove.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Remove.Position = UDim2.new(0.63, 0, 0.8, 0)
+Remove.Size = UDim2.new(0, 85, 0, 28)
+Remove.Font = Enum.Font.SourceSans
+Remove.Text = "Remove Gui"
+Remove.TextColor3 = Color3.fromRGB(255, 0, 0)
+Remove.TextScaled = true
+Remove.TextSize = 14.000
+Remove.TextWrapped = true
+Remove.MouseButton1Click:Connect(function()
+ScreenGui:Destroy()
+S:Destroy()
+end)
