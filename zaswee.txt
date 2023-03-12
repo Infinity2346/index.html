@@ -226,7 +226,7 @@ AutoWin.Font = Enum.Font.SourceSans
 AutoWin.Text = "Auto Win"
 AutoWin.TextColor3 = Color3.fromRGB(255, 255, 255)
 AutoWin.TextSize = 14.000
-AutoWin.MouseButton1Click:Connect(function()
+AutoWin.MouseButton1Down:Connect(function()
 print("auto win loaded, made by Finny")
 
 local lp = game.Players.LocalPlayer.Character.HumanoidRootPart
